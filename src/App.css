@@ -1,0 +1,6 @@
+html, body {
+    display: flex;
+    background-color: #333;
+    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+  }
