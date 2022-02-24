@@ -1,17 +1,26 @@
 import { Link, Redirect } from 'react-router-dom';
-import { useUser } from '../../context/UserContext';
+import image from '../../assets/huh.png';
+import './Home.css';
 
 export default function Home() {
-  const auth = useUser();
-  if (auth.user.email) return <Redirect to="/notes" />;
-
   return (
     <section>
-      <h1>Welcome</h1>
       <p>
-        Please <Link to="/login">sign in</Link> or
-        <Link to="/register">register.</Link>
+        Please{' '}
+        <Link className="loglink" to="/login">
+          sign in ( /login)
+        </Link>{' '}
+        or
+        <Link className="reglink" to="/register">
+          {' '}
+          register ( /register)
+        </Link>
+        .
       </p>
+
+      <h1>Hell World</h1>
+      <h3>and here we go</h3>
+      <img src={image} height={320} width={320}></img>
     </section>
   );
 }

@@ -1,13 +1,28 @@
 import './App.css';
-import image from './assets/huh.png';
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './views/Home/Home';
+import Auth from './views/Auth/Auth';
+import UserForm from './components/UserForm/UserForm';
+import Header from './Layout/Header/Header';
 
 export default function App() {
   return (
     <>
-      <h1>Hell World</h1>
-      <h3>and here we go</h3>
-      <img src={image} height={320} width={320}></img>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Auth />
+          </Route>
+          <Route path="/register">
+            <UserForm />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }
