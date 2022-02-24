@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
+
+label {
+  display: flex;
+  margin: auto;
+  /* padding: 2px; */
+}
+
+button {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 20px;
+  width: 60px;
+}
+
+h4 {
+  color: red;
+}

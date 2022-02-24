@@ -17,8 +17,9 @@ export default function App() {
           </Route>
           <Route path="/login">
             <Auth />
+            {/*<Auth isSigningUp /> */}
           </Route>
-          <Route path="/register">
+          <Route path="/userform">
             <UserForm />
           </Route>
         </Switch>

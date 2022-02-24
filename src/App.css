@@ -9,3 +9,7 @@ body {
 img:hover {
   opacity: 50%;
 }
+
+.h3 {
+  color: red;
+}

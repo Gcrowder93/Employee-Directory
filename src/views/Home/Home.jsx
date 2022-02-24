@@ -1,6 +1,7 @@
 import { Link, Redirect } from 'react-router-dom';
 import image from '../../assets/huh.png';
 import './Home.css';
+import UserForm from '../../components/UserForm/UserForm';
 
 export default function Home() {
   return (
@@ -11,9 +12,9 @@ export default function Home() {
           sign in ( /login)
         </Link>{' '}
         or
-        <Link className="reglink" to="/register">
+        <Link className="reglink" to="/UserForm">
           {' '}
-          register ( /register)
+          register ( /userform)
         </Link>
         .
       </p>
