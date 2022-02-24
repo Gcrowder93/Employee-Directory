@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import './Auth.css';
 
 function Auth() {
-  let history = useHistory();
+  const history = useHistory();
   const redirect = () => {
-    history.push('/userform');
+    history.push('/register');
   };
   return (
     <>

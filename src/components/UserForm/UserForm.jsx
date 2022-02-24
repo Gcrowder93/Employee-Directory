@@ -4,9 +4,12 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './UserForm.css';
 
 function UserForm() {
-  let history = useHistory();
+  const history = useHistory();
   const redirect = () => {
     history.push('/login');
+  };
+  const redirect2 = () => {
+    history.push('/edit');
   };
   return (
     <>
@@ -26,6 +29,9 @@ function UserForm() {
         <input id="password" type="password" name="password" />
       </form>
       <button
+        onClick={redirect2}
+        // take away the redirect
+        //this is just showing where to take the user after signing up
         style={{
           width: '110px',
         }}

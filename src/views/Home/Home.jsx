@@ -7,16 +7,16 @@ export default function Home() {
   return (
     <section>
       <p>
-        Please{' '}
         <Link className="loglink" to="/login">
           sign in ( /login)
-        </Link>{' '}
-        or
-        <Link className="reglink" to="/UserForm">
-          {' '}
+        </Link>
+        <br></br>
+
+        <Link className="reglink" to="/register">
           register ( /userform)
         </Link>
-        .
+        <br></br>
+        <Link to="/edit">edit ( /edit</Link>
       </p>
 
       <h1>Hell World</h1>

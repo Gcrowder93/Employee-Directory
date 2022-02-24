@@ -5,6 +5,7 @@ import Home from './views/Home/Home';
 import Auth from './views/Auth/Auth';
 import UserForm from './components/UserForm/UserForm';
 import Header from './Layout/Header/Header';
+import EditProfile from './views/Profile/EditProfile';
 
 export default function App() {
   return (
@@ -16,11 +17,14 @@ export default function App() {
             <Home />
           </Route>
           <Route path="/login">
-            <Auth />
-            {/*<Auth isSigningUp /> */}
+            {/* <Auth /> */}
+            <Auth isSigningUp />
           </Route>
-          <Route path="/userform">
+          <Route path="/register">
             <UserForm />
+          </Route>
+          <Route path="/edit">
+            <EditProfile />
           </Route>
         </Switch>
       </Router>
