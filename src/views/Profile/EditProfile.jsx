@@ -32,7 +32,7 @@ function EditProfile() {
           Save Profile
         </button>
       </>
-      <Link to="/">Back Home</Link>
+      {/* <Link to="/">Back Home</Link> */}
     </>
   );
 }
