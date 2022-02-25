@@ -12,11 +12,11 @@ function EditProfile() {
           <input id="name" type="name" name="name" />{' '}
           <label htmlFor="email">Email:</label>
           <input disabled id="email" type="email" name="email">
-            {/*${email}*/}
+            ${email}
           </input>
           <label htmlFor="password">Password:</label>
           <input disabled id="password" type="password" name="password">
-            {/*${password}*/}
+            ${password}
           </input>
           <label htmlFor="Bio">Bio:</label>
           <textarea id="bio" type="textarea" name="bio" />

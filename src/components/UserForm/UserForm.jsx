@@ -1,58 +1,61 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './UserForm.css';
+import React, { useEffect } from 'react';
+import { useForm } from '../../hooks/useForm';
+import { Link } from 'react-router-dom';
 
-function UserForm() {
-  const history = useHistory();
-  const redirect = () => {
-    history.push('/login');
+export default function UserForm({ className = '', label, onSubmit }) {
+  const { formState, formError, clearForm, handleFormChange, setFormError } =
+    useForm({
+      email: '',
+      password: '',
+    });
+
+  useEffect(() => {
+    // clearForm();
+  }, [label]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { email, password } = formState;
+
+    try {
+      setFormError('');
+      if (!email || password.length < 8)
+        throw new Error('Email & Password has to be 8+ characters');
+      await onSubmit(email, password);
+    } catch (error) {
+      setFormError(error.message);
+    }
   };
-  const redirect2 = () => {
-    history.push('/edit');
-  };
+
   return (
     <>
-      <div>UserForm</div>
-      <h2>this page will have a form to register and sign up</h2>
-      <h3>
-        clicking 'create account' should take user to an 'edit profile page'
-        <br></br>
-        which will have a bio and bday section
-      </h3>
-
-      <form>
-        <h4>SIGN UP</h4>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" name="email" />
-        <label htmlFor="password">Password:</label>
-        <input id="password" type="password" name="password" />
+      <form className={className} onSubmit={handleSubmit}>
+        <legend>{label}</legend>
+        <section>
+          <label htmlFor="email">Email: </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={formState.email}
+            onChange={handleFormChange}
+          />
+        </section>
+        <section>
+          <label htmlFor="password">Password: </label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            value={formState.password}
+            onChange={handleFormChange}
+          />
+        </section>
+        <button type="submit">Save</button>
+        {formError && <p>{formError}</p>}
       </form>
-      <button
-        onClick={redirect2}
-        // take away the redirect
-        //this is just showing where to take the user after signing up
-        style={{
-          width: '110px',
-        }}
-        type="submit"
-      >
-        Create Account
-      </button>
-      <button
-        onClick={redirect}
-        style={{
-          width: '115px',
-        }}
-        type="submit"
-      >
-        Already a User?
-      </button>
-
-      <br></br>
       <Link to="/">Back Home</Link>
     </>
   );
 }
-
-export default UserForm;

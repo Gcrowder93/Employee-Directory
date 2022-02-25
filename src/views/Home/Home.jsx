@@ -1,7 +1,7 @@
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import image from '../../assets/huh.png';
 import './Home.css';
-import UserForm from '../../components/UserForm/UserForm';
+// import UserForm from '../../components/UserForm/UserForm';
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import { getUser } from '../services/users';
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const currentUser = getUser();
@@ -24,4 +24,4 @@ const useUser = () => {
   return context;
 };
 
-export { UserContext, UserProvider, useUser };
+export { UserProvider, useUser };

@@ -1,55 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 import './Auth.css';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { signInUser, signUpUser } from '../../services/users';
+import UserForm from '../../components/UserForm/UserForm';
+import { useUser } from '../../context/UserContext';
 
-function Auth() {
+export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
-  const redirect = () => {
-    history.push('/register');
+  const { setUser } = useUser();
+
+  const handleAuth = async (email, password) => {
+    try {
+      if (isSigningUp) {
+        await signUpUser(email, password);
+        history.push(`/confirm-email`);
+      } else {
+        const response = await signInUser(email, password);
+        setUser({ id: response.id, email: response.email });
+        history.replace(`/profile`);
+      }
+    } catch (error) {
+      throw error;
+    }
   };
+
   return (
-    <>
-      <div>Auth</div>
-      <h3>
-        this page is the log in page.[/]<br></br>
-        should have form with should have 2 inputs (email, pass)[/]<br></br> and
-        2 buttons (login, register) [/]<br></br>
-        <br></br>
-        login button takes you to /home, with protected links to edit profile{' '}
-        <br></br>OR to an edit profile page with inputs for birthday and bio
-      </h3>
-
-      <form>
-        <h4>LOG IN</h4>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" name="email" />
-        <label htmlFor="password">Password:</label>
-        <input id="password" type="password" name="password" />
-      </form>
-      <button
-        style={{
-          width: '55px',
-        }}
-        type="submit"
-      >
-        Log In
-      </button>
-      <button
-        onClick={redirect}
-        style={{
-          width: '88px',
-        }}
-        type="submit"
-      >
-        Not a User?
-      </button>
-
-      <br></br>
-      <Link to="/">Back Home</Link>
-    </>
+    <section>
+      <h2>{isSigningUp ? 'Welcome!' : 'Welcome Back!'}</h2>
+      <div>
+        <UserForm
+          onSubmit={handleAuth}
+          label={isSigningUp ? 'Sign Up' : 'Sign In'}
+        />
+        {isSigningUp ? (
+          <p>
+            Create Account <Link to="/register">Sign Up</Link>
+          </p>
+        ) : (
+          <p>
+            Already a User? <Link to="/login">Sign In</Link>
+          </p>
+        )}
+      </div>
+    </section>
   );
 }
-<Link to="/">Back Home</Link>;
-
-export default Auth;
