@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { signInUser, signUpUser } from '../../services/users';
 import UserForm from '../../components/UserForm/UserForm';
 import { useUser } from '../../context/UserContext';
+import { updateProfile } from '../../services/profile';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
@@ -29,10 +30,11 @@ export default function Auth({ isSigningUp = false }) {
       <h2>
         {isSigningUp
           ? 'Welcome! Please create an account'
-          : 'Welcome Back ${user}!'}
+          : 'Welcome Back, Please Sign In '}
       </h2>
       <div>
         <UserForm
+          className="userform"
           onSubmit={handleAuth}
           label={isSigningUp ? <mark>Sign Up</mark> : <mark>Sign In</mark>}
         />

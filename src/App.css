@@ -1,6 +1,7 @@
 html,
 body {
-  display: flex;
+  text-align: center;
+  /* display: flex; */
   background-color: darkkhaki;
   color: #eee;
   font-family: Arial, Helvetica, sans-serif;

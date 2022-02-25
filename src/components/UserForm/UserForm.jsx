@@ -2,6 +2,7 @@ import './UserForm.css';
 import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom';
+import EditProfile from '../../views/Profile/EditProfile';
 
 export default function UserForm({ className = '', label, onSubmit }) {
   const { formState, formError, clearForm, handleFormChange, setFormError } =
@@ -52,7 +53,7 @@ export default function UserForm({ className = '', label, onSubmit }) {
             onChange={handleFormChange}
           />
         </section>
-        <button type="submit">Save</button>
+        <button type="submit">Sign In</button>
         {formError && <p>{formError}</p>}
       </form>
       <Link to="/">Back Home</Link>

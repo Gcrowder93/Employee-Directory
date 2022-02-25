@@ -7,7 +7,7 @@ export default function Header() {
     <>
       <header>
         <Link to="/">
-          <h3>Home Page (this is a header)</h3>
+          <h3>Acme Employee Directory</h3>
         </Link>
         <p>
           <AuthButton />

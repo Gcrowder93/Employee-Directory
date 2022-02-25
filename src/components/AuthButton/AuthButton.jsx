@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { signOutUser } from '../../services/users';
 import { useUser } from '../../context/UserContext';
+// import { updateProfile } from '../../services/profile';
 
 export default function AuthButton({ className }) {
   const { user, setUser } = useUser();
@@ -35,3 +36,16 @@ export default function AuthButton({ className }) {
     </>
   );
 }
+
+// <button
+//   style={{
+//     width: '70px',
+//   }}
+//   className={className}
+//   onClick={async () => {
+//     await updateProfile();
+//     setUser({});
+//   }}
+// >
+//   Sign Out
+// </button>;

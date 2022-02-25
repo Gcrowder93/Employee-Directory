@@ -8,15 +8,17 @@ export default function Home() {
     <section>
       <p>
         <Link className="loglink" to="/login">
-          sign in ( /login)
+          Sign in
         </Link>
         <br></br>
 
         <Link className="reglink" to="/register">
-          register ( /userform)
+          Register
         </Link>
         <br></br>
-        <Link to="/edit">edit ( /edit</Link>
+        <Link to="/edit">Edit Profile</Link>
+        <br></br>
+        <Link to="/profile">View Profile</Link>
       </p>
 
       <h1>Hell World</h1>
