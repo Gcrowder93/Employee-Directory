@@ -7,9 +7,13 @@
   padding: 10px;
 }
 
-.header a {
+button {
+  width: 80px;
+}
+
+.header {
   text-decoration: none;
-  width: 280px;
+  width: 40px;
 }
 
 .nav {

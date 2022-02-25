@@ -26,19 +26,23 @@ export default function Auth({ isSigningUp = false }) {
 
   return (
     <section>
-      <h2>{isSigningUp ? 'Welcome!' : 'Welcome Back!'}</h2>
+      <h2>
+        {isSigningUp
+          ? 'Welcome! Please create an account'
+          : 'Welcome Back ${user}!'}
+      </h2>
       <div>
         <UserForm
           onSubmit={handleAuth}
-          label={isSigningUp ? 'Sign Up' : 'Sign In'}
+          label={isSigningUp ? <mark>Sign Up</mark> : <mark>Sign In</mark>}
         />
         {isSigningUp ? (
           <p>
-            Create Account <Link to="/register">Sign Up</Link>
+            Already a User? <Link to="/login">Sign In</Link>
           </p>
         ) : (
           <p>
-            Already a User? <Link to="/login">Sign In</Link>
+            Not Registered? <Link to="/register">Sign Up</Link>
           </p>
         )}
       </div>

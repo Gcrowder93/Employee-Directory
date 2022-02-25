@@ -17,6 +17,12 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Switch>
+          <PrivateRoute path="/profile">
+            <ProfileDetail />
+          </PrivateRoute>
+          <PrivateRoute path="/edit">
+            <EditProfile />
+          </PrivateRoute>
           <Route exact path="/">
             <Home />
           </Route>
@@ -30,12 +36,6 @@ export default function App() {
           <Route path="/confirm-email">
             <ConfirmEmail />
           </Route>
-          <PrivateRoute path="/profile">
-            <ProfileDetail />
-          </PrivateRoute>
-          <PrivateRoute path="/edit">
-            <EditProfile />
-          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </UserProvider>

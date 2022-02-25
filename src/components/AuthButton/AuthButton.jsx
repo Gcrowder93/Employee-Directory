@@ -22,7 +22,14 @@ export default function AuthButton({ className }) {
         </button>
       ) : (
         <Link to="/login" className={className}>
-          <button>Sign In</button>
+          <button
+            className={className}
+            style={{
+              width: '70px',
+            }}
+          >
+            Sign In
+          </button>
         </Link>
       )}
     </>

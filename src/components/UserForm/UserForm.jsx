@@ -55,7 +55,7 @@ export default function UserForm({ className = '', label, onSubmit }) {
         <button type="submit">Save</button>
         {formError && <p>{formError}</p>}
       </form>
-      <Link to="/">Back Home</Link>
+      <Link to="/EditProfile">Back Home</Link>
     </>
   );
 }
