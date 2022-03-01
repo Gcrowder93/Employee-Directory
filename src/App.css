@@ -1,6 +1,16 @@
-html, body {
-    display: flex;
-    background-color: #333;
-    color: #eee;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+html,
+body {
+  text-align: center;
+  /* display: flex; */
+  background-color: darkkhaki;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img:hover {
+  opacity: 50%;
+}
+
+.h3 {
+  color: red;
+}

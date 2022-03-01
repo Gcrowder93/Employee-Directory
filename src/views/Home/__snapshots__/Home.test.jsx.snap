@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the home page 1`] = `
+<div>
+  <section>
+    <p>
+      <a
+        class="loglink"
+        href="/login"
+      >
+        sign in ( /login)
+      </a>
+      <br />
+      <a
+        class="reglink"
+        href="/register"
+      >
+        register ( /userform)
+      </a>
+      <br />
+      <a
+        href="/edit"
+      >
+        edit ( /edit
+      </a>
+    </p>
+    <h1>
+      Hell World
+    </h1>
+    <h3>
+      and here we go
+    </h3>
+    <img
+      height="320"
+      src="/path/image"
+      width="320"
+    />
+  </section>
+</div>
+`;
