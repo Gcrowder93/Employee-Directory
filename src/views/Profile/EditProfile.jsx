@@ -26,10 +26,10 @@ export default function EditProfile({ isProfile = false }) {
     e.preventDefault();
     if (isProfile) {
       updateProfile({ name, email: user.email, bio, birthday });
-      setProfile({ name, email: user.email, bio, birthday });
+      // setProfile({ name, email: user.email, bio, birthday });
     } else {
       createProfile({ name, email: user.email, bio, birthday });
-      setProfile({ name, email: user.email, bio, birthday });
+      // setProfile({ name, email: user.email, bio, birthday });
     }
   };
 
@@ -41,14 +41,14 @@ export default function EditProfile({ isProfile = false }) {
       <>
         <form onSubmit={handleSubmit}>
           <h1>{isProfile ? 'Create Profile' : 'Edit Profile'}</h1>
-          {/* <label>Email:</label>
+          <label>Email:</label>
           <input
             type="text"
             placeholder={user.email}
             value={email}
             disabled
             onChange={(e) => setEmail(e.target.value)}
-          /> */}
+          />
           <label>Name:</label>
           <input
             type="text"

@@ -36,16 +36,3 @@ export default function AuthButton({ className }) {
     </>
   );
 }
-
-// <button
-//   style={{
-//     width: '70px',
-//   }}
-//   className={className}
-//   onClick={async () => {
-//     await updateProfile();
-//     setUser({});
-//   }}
-// >
-//   Sign Out
-// </button>;
